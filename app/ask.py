@@ -25,7 +25,7 @@ def ask(question: str) -> str:
     client = genai.Client(api_key=get_api_key())
     response = client.models.generate_content(model=MODEL, contents=question)
 
-    usg= response.usage_metadata
+    usage = response.usage_metadata
     if usage is None:
         print("[トークン数] 入力: -, 出力: -")
     else:
